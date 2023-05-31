@@ -13,16 +13,23 @@
 5. To allow the client to start/stop a routine that runs on the server.
 6. To allow the client to request a software reset event on the server.
 
-## 2. Design
+## 2. UDS sequence
 * Using UDS commiunication protocol client side will send Service ID (0x10) followed by (03) as a request for programming session.
 * Either we have positive (Service ID+0x40) or negative response (0x7F).
 * Second step will be sending SI (0x34 + data size) which means I ask to flash the dtat size that will be normally the flash page size.
 * Dpending on positive response i will procced with the third step send the data itself with SI (0x36 + flash page).
 * Till everything is done Request transfer exit will be sent (0x37).
 
+## 3. Bootloader sequence
+- After flashing through UDS, BL will start checking two flags from EEPROM availability of valid app running and reprogramming request from app.
+- In case of valid app availble the BL will jump dierectly to it, else BL will be waiting for programming session and UDS will take control from here.
+- In case of reprogramming request BL will allow UDS to take control to reflash a new programm or an update
+
 ## Resources
 * Arabic
+** All credits go to these two amazing videos ** 
 1. https://www.youtube.com/watch?v=s3Iecog7hrM .
 2. https://www.youtube.com/watch?v=clgxoJOygqA .
+
 * English
-1. https://www.youtube.com/watch?v=CV_B8tJgI5E&pp=ygUDdWRz .
+4. https://www.youtube.com/watch?v=CV_B8tJgI5E&pp=ygUDdWRz .
