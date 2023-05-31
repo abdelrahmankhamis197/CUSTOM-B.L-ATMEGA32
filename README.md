@@ -26,10 +26,11 @@
 - In case of reprogramming request BL will allow UDS to take control to reflash a new programm or an update
 
 ## Resources
-* Arabic.
+* Arabic
+
 **All credits go to these two amazing videos** 
 1. https://www.youtube.com/watch?v=s3Iecog7hrM .
 2. https://www.youtube.com/watch?v=clgxoJOygqA .
 
-* English.
+* English
 4. https://www.youtube.com/watch?v=CV_B8tJgI5E&pp=ygUDdWRz .
